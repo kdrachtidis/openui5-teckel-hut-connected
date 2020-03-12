@@ -1,0 +1,4 @@
+[
+    {"label":"Use Case 1","TotalProcessingTime":21.0,"TimeForAction1":7.0,"TimeForAction2":7.0,"TimeForAction3":0.0},
+    {"label":"Use Case 2","TotalProcessingTime":16.0,"TimeForAction1":5.0,"TimeForAction2":2.0,"TimeForAction3":5.0}
+]

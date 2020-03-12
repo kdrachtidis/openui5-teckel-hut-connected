@@ -1,0 +1,88 @@
+<core:FragmentDefinition
+		height="100%"
+		xmlns:layout="sap.ui.layout"
+		xmlns:form="sap.ui.layout.form"
+		xmlns:core="sap.ui.core"
+		xmlns="sap.m">
+		<Page id="wizardReviewPage" showHeader="false">
+			<content>
+				<form:SimpleForm
+						title="1. File Information"
+						minWidth="1024"
+						editable="false"
+						layout="ResponsiveGridLayout">
+					<form:content>
+						<Label text="UseCaseData.json"/>
+						<Text id="FileChosen" text="{/file}"/>
+						<Link press="editStepOne" text="Edit" />
+					</form:content>
+				</form:SimpleForm>
+				
+				<form:SimpleForm
+						title="2. Event Information"
+						minWidth="1024"
+						editable="false"
+						layout="ResponsiveGridLayout">
+					<form:content>
+						<Label text="Name"/>
+						<Text id="EventNameChosen" text="{/eventName}"/>
+						<Label text="Start"/>
+						<Text id="EventStartChosen" text="{/eventStart}"/>
+						<Label text="End"/>
+						<Text id="EventEndChosen" text="{/eventEnd}"/>
+						<Label text="Location"/>
+						<Text id="EventLocationChosen" text="{/eventLocation}"/>
+						<Link press="editStepTwo" text="Edit" />
+					</form:content>
+				</form:SimpleForm>
+
+				<form:SimpleForm
+						title="Moderator Information"
+						minWidth="1024"
+						editable="false"
+						layout="ResponsiveGridLayout">
+					<form:content>
+						<Label text="Name"/>
+						<Text id="ModeratorNameChosen" text="{/moderatorName}"/>
+						<Label text="Role"/>
+						<Text id="ModeratorRoleChosen" text="{/moderatorRole}"/>
+						<Link press="editStepTwo" text="Edit" />
+					</form:content>
+				</form:SimpleForm>
+
+				<form:SimpleForm
+						title="Notetaker Information"
+						minWidth="1024"
+						editable="false"
+						layout="ResponsiveGridLayout">
+					<form:content>
+						<Label text="Name"/>
+						<Text id="NoteNameChosen" text="{/noteName}"/>
+						<Label text="Role"/>
+						<Text id="NoteRoleChosen" text="{/noteRole}"/>
+						<Link press="editStepTwo" text="Edit" />
+					</form:content>
+				</form:SimpleForm>
+ 
+				<form:SimpleForm
+						title="3. Additional Information"
+						minWidth="1024"
+						editable="false"
+						layout="ResponsiveGridLayout">
+					<form:content>
+						<Label text="Tags"/>
+						<Text id="TagsChosen" text="..."/>
+						<Link press="editStepThree" text="Edit" />
+					</form:content>
+				</form:SimpleForm>
+			</content>
+			<footer>
+				<Bar>
+					<contentRight>
+						<Button text="Submit" press="handleWizardSubmit"></Button>
+						<Button text="Cancel" press="handleWizardCancel"></Button>
+					</contentRight>
+				</Bar>
+			</footer>
+		</Page>
+</core:FragmentDefinition>

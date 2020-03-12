@@ -1,0 +1,99 @@
+<mvc:View controllerName="UI5FioriForTools.controller.Dashboard" height="100%" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns="sap.m">
+
+    <Page showHeader="false">
+        <l:BlockLayout background="Accent">
+            <l:BlockLayoutRow>
+                <l:BlockLayoutCell class="smallPaddingBottom">
+                    <Title class="dashboardName" level="H1" text="{useCaseData>/UsabilityTestDetails/UsabilityTestTitle}"/>
+                </l:BlockLayoutCell>
+            </l:BlockLayoutRow>
+        </l:BlockLayout>
+
+        <l:BlockLayout background="Accent">
+            <l:BlockLayoutRow>
+                <l:BlockLayoutCell class="row0 smallPaddingTop" id="cell1" width="2">
+                        <l:VerticalLayout class="dashboardLayout">
+                            <Title class="dashboardTitle" text="Description"/>
+                            <Text class="dashboardText" text="{useCaseData>/UsabilityTestDetails/UsabilityTestDescription}" />
+                        </l:VerticalLayout>
+                </l:BlockLayoutCell>
+                <l:BlockLayoutCell class="row0 smallPaddingTopMiddle" id="cell2" >
+                        <l:VerticalLayout class="dashboardLayout">
+                            <Title class="dashboardTitle" text="Tested at"/>
+                            <Text class="dashboardText" text="{useCaseData>/UsabilityTestDetails/UsabilityTestEvent}" />
+                            <Text class="dashboardText" text="{useCaseData>/UsabilityTestDetails/UsabilityTestEventDate}" />
+                        </l:VerticalLayout>
+                </l:BlockLayoutCell>
+                <l:BlockLayoutCell class="row0 smallPaddingTop" id="cell3" >
+                        <l:VerticalLayout class="dashboardLayout">
+                            <Title class="dashboardTitle" text ="Link to Prototype"/>
+                            <Link class="dashboardText dashboardLink" text="Open" target="_blank" href="{useCaseData>/UsabilityTestDetails/UsabilityTestPrototype}" />
+                        </l:VerticalLayout>
+                </l:BlockLayoutCell>
+            </l:BlockLayoutRow>
+        </l:BlockLayout>
+
+        <l:BlockLayout background="Default">
+            <l:BlockLayoutRow>
+                <l:BlockLayoutCell class="smallPadding" title="General User Statistics"></l:BlockLayoutCell>
+            </l:BlockLayoutRow>
+        </l:BlockLayout>
+
+        <l:BlockLayout background="Dashboard">
+            <l:BlockLayoutRow>
+                <l:BlockLayoutCell class="row1 mediumPadding" id="cell4" title="Test Sessions" titleAlignment="Center">
+                        <TileContent footer="participants" class="">
+                            <content>
+                                <NumericContent value="{general>/sessionCount}" icon="sap-icon://person-placeholder" />
+                            </content>
+                        </TileContent>
+                </l:BlockLayoutCell>
+                <l:BlockLayoutCell class="row1 mediumPadding" id="cell5" title="Use Cases" titleAlignment="Center">
+                        <TileContent footer="case" class="">
+                            <content>
+                                <NumericContent value="{numberUseCases>/numberUseCases}" icon="sap-icon://puzzle"/>
+                            </content>
+                        </TileContent>
+                </l:BlockLayoutCell>
+                <l:BlockLayoutCell class="row1 mediumPadding" id="cell6" title="Last Session" titleAlignment="Center">
+                        <TileContent footer="days ago" class="">
+                            <content>
+                                <NumericContent value="0" icon="sap-icon://past"/>
+                            </content>
+                        </TileContent>
+                </l:BlockLayoutCell>
+                <l:BlockLayoutCell class="row1 mediumPadding" id="cell7" title="Time Spent" titleAlignment="Center">
+                        <TileContent footer="hours" class="">
+                            <content>
+                                <NumericContent value="{general>/timeCount}" icon="sap-icon://history" />
+                            </content>
+                        </TileContent>
+                </l:BlockLayoutCell>
+            </l:BlockLayoutRow>
+        </l:BlockLayout>
+
+        <l:BlockLayout background="Default">
+            <l:BlockLayoutRow>
+                <l:BlockLayoutCell class="smallPadding" title="Technical Statistics"></l:BlockLayoutCell>
+            </l:BlockLayoutRow>
+        </l:BlockLayout>
+
+        <l:BlockLayout background="Dashboard">
+            <l:BlockLayoutRow>
+                <l:BlockLayoutCell class="row2 mediumPadding" id="cell8" title="Screen Size" titleAlignment="Center">
+                    <FlexBox id="waffleHolderScreen" alignItems="Start" class="waffle"
+								justifyContent="Start"></FlexBox>
+                </l:BlockLayoutCell>
+                <l:BlockLayoutCell class="row2 mediumPadding" id="cell9" title="OS" titleAlignment="Center">
+                    <FlexBox id="waffleHolderOS" alignItems="Start" class="waffle"
+								justifyContent="Start"></FlexBox>
+                </l:BlockLayoutCell>
+                <l:BlockLayoutCell class="row2 mediumPadding" id="cell10" title="Browser" titleAlignment="Center">
+                    <FlexBox id="waffleHolderBrowser" alignItems="Start" class="waffle"
+								justifyContent="Start"></FlexBox>
+                </l:BlockLayoutCell>
+            </l:BlockLayoutRow>
+        </l:BlockLayout>
+    </Page>
+
+</mvc:View>

@@ -1,0 +1,57 @@
+<mvc:View controllerName="UI5FioriForTools.controller.Session" height="100%" xmlns:layout="sap.ui.layout" xmlns:commons="sap.ui.commons" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:uxap="sap.uxap" xmlns="sap.m">
+  <Page showHeader="false">
+      <SplitApp id="SplitAppDemo" initialDetail="detail" initialMaster="master" orientationChange="onOrientationChange">
+		<detailPages>
+            <uxap:ObjectPageLayout>
+                <uxap:headerTitle>
+                    <uxap:ObjectPageHeader id="header" headerDesign="Light" objectTitle='{selectedSession>/session}'>
+                    </uxap:ObjectPageHeader>
+                </uxap:headerTitle>
+                <uxap:headerContent>
+                    <layout:VerticalLayout>
+                        <!--> TODO: Make dynamic <!-->
+                        <ObjectStatus title="Name" text="{selectedSession>/sessionName}" />
+                        <ObjectStatus title="Uploaded On" text="{selectedSession>/sessionDate}" />
+                        <ObjectStatus title="Role" text="{selectedSession>/sessionRole}" />
+                    </layout:VerticalLayout>
+                </uxap:headerContent>
+                <uxap:sections>
+                    <uxap:ObjectPageSection title="All Use Cases">
+                        <uxap:subSections>
+                            <uxap:ObjectPageSubSection title="">
+                                <layout:VerticalLayout width="100%">
+                                    <Text text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet." />
+                                    <core:HTML content='&lt;div id=&quot;allUseCases&quot; class=&quot;bar-chart&quot;&gt; &lt;/div&gt;
+                                            &lt;script type=&quot;text/javascript&quot; src=&quot;diagrams/allUseCases.js&quot; &gt; &lt;/script&gt;' >
+                                    </core:HTML>
+                                </layout:VerticalLayout>
+                            </uxap:ObjectPageSubSection>
+                        </uxap:subSections>
+                    </uxap:ObjectPageSection>
+                    <uxap:ObjectPageSection title="With Steps">
+                        <uxap:subSections>
+                            <uxap:ObjectPageSubSection title="">
+                                <layout:VerticalLayout width="100%">
+                                    <Text text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet." />
+                                    <core:HTML content='&lt;div id=&quot;allUseCasesNested&quot; class=&quot;nested-bar-chart&quot;&gt; &lt;/div&gt;
+                                            &lt;script type=&quot;text/javascript&quot; src=&quot;diagrams/detailedUserView.js&quot; &gt; &lt;/script&gt;' >
+                                    </core:HTML>
+                                </layout:VerticalLayout>
+                            </uxap:ObjectPageSubSection>
+                        </uxap:subSections>
+                    </uxap:ObjectPageSection>
+                </uxap:sections>
+            </uxap:ObjectPageLayout>
+		</detailPages>
+		<masterPages>
+            <Page showHeader="false">
+                <List id="listSession" selectionChange="onListItemPress" mode="SingleSelectMaster" items="{holdSessions>/}">
+                    <items>
+                        <StandardListItem title="Session-{holdSessions>documentId}" type="Active"/>
+                    </items>
+                </List>
+            </Page>
+		</masterPages>
+	</SplitApp>
+  </Page>
+</mvc:View>

@@ -1,0 +1,30 @@
+<mvc:View controllerName="UI5FioriForTools.controller.UseCase" height="100%" xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout"
+	xmlns:uxap="sap.uxap" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
+	<Page id="UseCasePage" showHeader="false">
+		<SplitApp id="SplitAppDemo" initialDetail="detail" initialMaster="master" orientationChange="onOrientationChange">
+			<detailPages>
+				<uxap:ObjectPageLayout id="useCasePage">
+					<uxap:headerTitle>
+						<uxap:ObjectPageHeader id="header2" headerDesign="Light" objectTitle='{currentUseCase>/id}'></uxap:ObjectPageHeader>
+					</uxap:headerTitle>
+					<!--<uxap:headerContent>
+                    <layout:VerticalLayout>
+                        <ObjectStatus title="Description" text="Place Description here" />
+                        <ObjectStatus title="Actions" text="Show Information about related Actions here" />
+                    </layout:VerticalLayout>
+                </uxap:headerContent>-->
+					<uxap:sections id="useCaseActions"></uxap:sections>
+				</uxap:ObjectPageLayout>
+			</detailPages>
+			<masterPages>
+				<Page showHeader="false">
+					<List id="listSession" selectionChange="onListItemPress" mode="SingleSelectMaster" items="{useCaseData>/UseCases}">
+						<items>
+							<StandardListItem title="{useCaseData>UseCaseTitle}" type="Active"/>
+						</items>
+					</List>
+				</Page>
+			</masterPages>
+		</SplitApp>
+	</Page>
+</mvc:View>

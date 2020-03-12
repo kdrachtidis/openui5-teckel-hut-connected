@@ -1,0 +1,9 @@
+[
+    {"label":"Use Case 1", "TotalProcessingTime":231, "TimeForAction1":31, "TimeForAction2":143, "TimeForAction3": 57},
+    {"label":"Use Case 2", "TotalProcessingTime":123, "TimeForAction1":19, "TimeForAction2":34, "TimeForAction3":70},
+    {"label":"Use Case 3", "TotalProcessingTime":241, "TimeForAction1":120, "TimeForAction2":22, "TimeForAction3":99},
+    {"label":"Use Case 4", "TotalProcessingTime":533, "TimeForAction1":163, "TimeForAction2":321, "TimeForAction3":49},
+    {"label":"Use Case 5", "TotalProcessingTime":183, "TimeForAction1":69, "TimeForAction2":114, "TimeForAction3":0},
+    {"label":"Use Case 6", "TotalProcessingTime":95, "TimeForAction1":35, "TimeForAction2":27, "TimeForAction3":33},
+    {"label":"Use Case 7", "TotalProcessingTime":252, "TimeForAction1":151, "TimeForAction2":101, "TimeForAction3":0}
+]

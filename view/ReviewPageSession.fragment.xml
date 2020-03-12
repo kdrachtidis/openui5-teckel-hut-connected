@@ -1,0 +1,46 @@
+<core:FragmentDefinition
+		height="100%"
+		xmlns:layout="sap.ui.layout"
+		xmlns:form="sap.ui.layout.form"
+		xmlns:core="sap.ui.core"
+		xmlns="sap.m">
+		<Page id="wizardSessionReviewPage" showHeader="false">
+			<content>
+				<form:SimpleForm
+						title="1. File Information"
+						minWidth="1024"
+						editable="false"
+						layout="ResponsiveGridLayout">
+					<form:content>
+						<Label text="Session.csv"/>
+						<Text id="SessionFileChosen" text="{inputs>/file}"/>
+						<Link press="editStepOne" text="Edit" />
+					</form:content>
+				</form:SimpleForm>
+				
+				<form:SimpleForm
+						title="2. Additional Information"
+						minWidth="1024"
+						editable="false"
+						layout="ResponsiveGridLayout">
+					<form:content>
+						<Label text="Name of the Session"/>
+						<Text id="NameChosen" text="{inputs>/name}"/>
+						<Label text="Role"/>
+						<Text id="RoleChosen" text="{inputs>/role}"/>
+						<Label text="Experience"/>
+						<Text id="ExperienceChosen" text="{inputs>/experience}"/>
+						<Link press="editStepTwo" text="Edit" />
+					</form:content>
+				</form:SimpleForm>
+			</content>
+			<footer>
+				<Bar>
+					<contentRight>
+						<Button text="Submit" press="handleWizardSubmit"></Button>
+						<Button text="Cancel" press="handleWizardCancel"></Button>
+					</contentRight>
+				</Bar>
+			</footer>
+		</Page>
+</core:FragmentDefinition>

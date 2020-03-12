@@ -1,0 +1,75 @@
+<mvc:View
+		height="100%"
+		id="WizardSessionView"
+		controllerName="UI5FioriForTools.controller.WizardSession"
+		xmlns:layout="sap.ui.layout"
+		xmlns:form="sap.ui.layout.form"
+		xmlns:core="sap.ui.core"
+		xmlns:u="sap.ui.unified"
+		xmlns:mvc="sap.ui.core.mvc"
+		xmlns="sap.m">
+		<NavContainer id="wizardNavContainer">
+			<pages>
+				<Page
+				id="wizardContentPage"
+				showHeader="false">
+					<content>
+						<Wizard id="SessionWizard"
+								complete="wizardCompletedHandler">
+							<WizardStep id="uploadStep"
+										title="Session Data"
+										validated="false">
+                                <form:SimpleForm
+										editable="true">
+									<Label text="Session.csv" required="true"/>
+									<u:FileUploader
+											id="fileUploader"
+											width="400px"
+											tooltip="Upload your Session.csv to the local server"
+											sendXHR="true"
+											style="Emphasized"
+											placeholder="Choose a csv file for Upload..."
+											valueState="{states>/fileValueState}"
+											value="{inputs>/file}"
+											change="onFileChanged"
+											uploadComplete="onFileUploaded" >
+											<u:parameters>
+												<u:FileUploaderParameter
+													name="name"
+													value="{inputs>/name}"/>
+												<u:FileUploaderParameter
+													name="role"
+													value="{inputs>/role}"/>
+												<u:FileUploaderParameter
+													name="experience"
+													value="{inputs>/experience}"/>
+											</u:parameters>
+									</u:FileUploader>
+								</form:SimpleForm>
+							</WizardStep>
+
+							<WizardStep id="infoStep"
+										validated="false"
+										title="Additional Information">
+								<form:SimpleForm editable="true" >
+									<Label text="Name of the Session" required="true"/>
+									<Input id="nameInput" valueState="{states>/nameState}" placeholder="Session Name" value="{inputs>/name}" liveChange="eventValidation"/>
+									<Label text="Role of the Participant" required="true"/>
+									<Input id="roleInput" valueState="{states>/roleState}" placeholder="Role Description" value="{inputs>/role}" liveChange="eventValidation"/>
+                                    <Label text="Experience of the Participant" required="true"/>
+									<Input id="experienceInput" valueState="{states>/experienceState}" placeholder="Experience" value="{inputs>/experience}" liveChange="eventValidation"/>
+									<Text text="year(s)"/>
+                                </form:SimpleForm>
+							</WizardStep>
+						</Wizard>
+					</content>
+					<footer>
+						<OverflowToolbar>
+							<ToolbarSpacer/>
+							<Button text="Cancel" press="handleWizardCancel"/>
+						</OverflowToolbar>
+					</footer>
+				</Page>
+			</pages>
+		</NavContainer>
+</mvc:View>

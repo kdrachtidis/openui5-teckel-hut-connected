@@ -1,0 +1,122 @@
+<mvc:View
+		height="100%"
+		id="WizardView"
+		controllerName="UI5FioriForTools.controller.Wizard"
+		xmlns:layout="sap.ui.layout"
+		xmlns:form="sap.ui.layout.form"
+		xmlns:core="sap.ui.core"
+		xmlns:u="sap.ui.unified"
+		xmlns:mvc="sap.ui.core.mvc"
+		xmlns="sap.m">
+		<NavContainer id="wizardNavContainer">
+			<pages>
+				<Page
+				id="wizardContentPage"
+				showHeader="false">
+					<content>
+						<Wizard id="CreateProductWizard"
+								complete="wizardCompletedHandler">
+							<WizardStep id="uploadStep"
+										title="Use Case Data"
+										validated="false">
+                                <form:SimpleForm
+										editable="true">
+									<Label text="UseCaseData.json" required="true"/>
+									<u:FileUploader
+											id="fileUploader"
+											width="400px"
+											tooltip="Upload your UseCaseData.json to the local server"
+											sendXHR="true"
+											style="Emphasized"
+											uploadUrl="https://teckelwebappd060345trial.hanatrial.ondemand.com/teckel-webapp/tests"
+											placeholder="Choose a json file for Upload..."
+											value="{/file}"
+											valueState="{/fileValueState}"
+											change="onFileChanged"
+											uploadComplete="onFileUploaded"/>
+								</form:SimpleForm>
+							</WizardStep>
+
+							<WizardStep id="eventStep"
+										validated="false"
+										title="Event Information">
+								<form:SimpleForm
+										editable="true"
+                                        title="Event">
+									<Label text="Event Form" required="true"/>
+									<layout:VerticalLayout>
+										<layout:HorizontalLayout>
+											<RadioButton id="RB1-1" text="On Site"/>
+											<core:Icon
+												src="sap-icon://decision"
+												color="#333333" 
+												class="radioIcon">
+											</core:Icon>
+										</layout:HorizontalLayout>
+										<layout:HorizontalLayout>
+											<RadioButton id="RB1-2" text="Remote - Guided"/>
+											<core:Icon
+												src="sap-icon://headset"
+												color="#333333" 
+												class="radioIcon">
+											</core:Icon>
+										</layout:HorizontalLayout>
+										<layout:HorizontalLayout>
+											<RadioButton id="RB1-3" text="Remote - Non-Guided"/>
+											<core:Icon
+												src="sap-icon://sound-off"
+												color="#333333" 
+												class="radioIcon">
+											</core:Icon>
+										</layout:HorizontalLayout>
+									</layout:VerticalLayout>
+									<Label text="Event Name" required="true"/>
+									<Input id="EventName" valueState="{/eventNameState}" placeholder="Event Name" value="{/eventName}" liveChange="eventValidation"/>
+                                    <Label text="Event Date" required="false"/>
+                                    <DateRangeSelection
+                                        id="EventDate"
+                                        dateValue="{path:'/eventStart'}"
+                                        secondDateValue="{path:'/eventEnd'}"
+                                        change="handleChange"
+                                    />
+                                    <Label text="Event Location" required="false"/>
+									<Input id="EventLocation" placeholder="Event Location" value="{/eventLocation}"/>
+                                </form:SimpleForm>
+                                <form:SimpleForm
+										editable="true"
+                                        title="Moderator">
+									<Label text="Name" required="true"/>
+									<Input id="ModeratorName" valueState="{/moderatorNameState}" placeholder="Full Name" value="{/moderatorName}" liveChange="eventValidation"/>
+                                    <Label text="Role" required="false"/>
+									<Input id="ModeratorRole" placeholder="UX Researcher/ UX Designer/ ..." value="{/moderatorRole}"/>
+								</form:SimpleForm>
+                                <form:SimpleForm
+										editable="true"
+                                        title="Notetaker">
+									<Label text="Name" required="true"/>
+									<Input id="NoteName" valueState="{/noteNameState}" placeholder="Full Name" value="{/noteName}" liveChange="eventValidation"/>
+                                    <Label text="Role" required="false"/>
+									<Input id="NoteRole" placeholder="UX Researcher/ UX Designer/ ..." value="{/noteRole}"/>
+								</form:SimpleForm>
+							</WizardStep>
+
+							<WizardStep id="additionalStep"
+										title="Additional Information">
+                                    <form:SimpleForm
+										editable="true">
+									<Label text="Tags" required="false"/>
+									<MultiInput id="tags" width="500px"/>
+								</form:SimpleForm>
+							</WizardStep>
+						</Wizard>
+					</content>
+					<footer>
+						<OverflowToolbar>
+							<ToolbarSpacer/>
+							<Button text="Cancel" press="handleWizardCancel"/>
+						</OverflowToolbar>
+					</footer>
+				</Page>
+			</pages>
+		</NavContainer>
+</mvc:View>

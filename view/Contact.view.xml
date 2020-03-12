@@ -1,0 +1,38 @@
+<mvc:View controllerName="UI5FioriForTools.controller.Contact" height="100%" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:f="sap.ui.layout.form" xmlns="sap.m">
+  <Page class="sapUiContentPadding" title="Contact Information">
+    <content>
+      <f:SimpleForm
+        editable="false"
+        layout="ResponsiveGridLayout"
+        singleContainerFullSize="false" >
+        <f:content>
+
+          <core:Title text="Martin Hofmann" />
+          <Label text="E-Mail" />
+          <Text text="martin.hofmann@sap.com" />
+          <Label text="Telefon" />
+          <Text text="+49 6227 7-43254" />
+
+          <core:Title text="Konstantinos Drachtidis" />
+          <Label text="E-Mail" />
+          <Text text="konstantinos.drachtidis@sap.com" />
+          <Label text="Telefon" />
+          <Text text="+49 6227 7-61037" />
+
+          <core:Title text="Jens Henniger" />
+          <Label text="E-Mail" />
+          <Text text="jens.henniger@sap.com" />
+          <Label text="Telefon" />
+          <Text text="+49 6227 7-49707" />
+
+          <core:Title text="Nancy Kunath" />
+          <Label text="E-Mail" />
+          <Text text="nancy.kunath@sap.com" />
+          <Label text="Telefon" />
+          <Text text="+49 6227 7-56471" />
+          
+        </f:content>
+      </f:SimpleForm>
+    </content>
+  </Page>
+</mvc:View>

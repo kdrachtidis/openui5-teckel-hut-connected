@@ -1,0 +1,50 @@
+<mvc:View controllerName="UI5FioriForTools.controller.Data" height="100%" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
+	<Page showHeader="false">
+    <content>
+			<Table id="idProductsTable" growing="true" growingThreshold="10" items="{ path: 'files>/uploadedFiles'}">
+				<headerToolbar>
+					<OverflowToolbar id="otbSubheader">
+						<Title text="Uploaded Sessions" level="H2" />
+						<ToolbarSpacer />
+						<!--<Button id="editButton" text="Edit" type="Transparent"
+							press="onEdit" />-->
+						<Button id="newButton" text="New Session" type="Transparent"
+							press="onNew" />
+						<!--<Button id="saveButton" text="Save" type="Transparent"
+							press="onSave" visible="false" />
+						<Button id="cancelButton" text="Cancel" type="Transparent"
+							press="onCancel" visible="false" />-->
+					</OverflowToolbar>
+				</headerToolbar>
+				<columns>
+					<Column width="4em" hAlign="Center">
+						<Text text="Session" />
+					</Column>
+					<Column hAlign="Begin">
+						<Text text="Name" />
+					</Column>
+					<Column hAlign="Begin">
+						<Text text="Role" />
+					</Column>
+					<Column hAlign="Center">
+						<Text text="Experience" />
+					</Column>
+					<Column hAlign="End">
+						<Text text="Uploaded on" />
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem>
+						<cells>
+							<Text text="{files>sessionId}" />
+							<Text text="{files>sessionName}" />
+							<Text text="{files>sessionRole}" />
+							<Text text="{files>sessionExperience} year(s)" />
+							<Text text="{files>uploadedOn}" />
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+  </Page>
+</mvc:View>

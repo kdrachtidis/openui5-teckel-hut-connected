@@ -1,0 +1,166 @@
+{
+	"_version": "1.1.0",
+	"sap.app": {
+		"_version": "1.1.0",
+		"id": "sap.ui.demo.toolpageapp",
+		"type": "application",
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"applicationVersion": {
+			"version": "1.0.0"
+		}
+	},
+	"sap.ui": {
+		"_version": "1.1.0",
+		"technology": "UI5",
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		}
+	},
+	"sap.ui5": {
+		"_version": "1.1.0",
+		"rootView": {
+			"viewName": "UI5FioriForTools.view.Home",
+			"type": "XML",
+			"id": "appHome"
+		},
+		"dependencies": {
+			"minUI5Version": "1.30",
+			"libs": {
+				"sap.ui.core": {},
+				"sap.m": {},
+				"sap.tnt": {},
+				"sap.ui.layout": {}
+			}
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"controlId": "appHome",
+				"viewType": "XML",
+				"controlAggregation": "pages",
+				"viewPath": "UI5FioriForTools.view",
+				"transition": "slide",
+				"async": true
+			},
+			"routes": [
+				{
+					"pattern": "",
+					"name": "home",
+					"target": "hut"
+				},
+				{
+					"pattern": "hut",
+					"name": "hut",
+					"target": "hut"
+				},
+				{
+					"pattern": "contact",
+					"name": "contact",
+					"target": "contact"
+				},
+				{
+					"pattern": "wizard",
+					"name": "wizard",
+					"target": "wizard"
+				},
+				{
+					"pattern": "dashboard",
+					"name": "dashboard",
+					"target": "dashboard"
+				},
+				{
+					"pattern": "data",
+					"name": "data",
+					"target": "data"
+				},
+				{
+					"pattern": "wizardSession",
+					"name": "wizardSession",
+					"target": "wizardSession"
+				},
+				{
+					"pattern": "general",
+					"name": "general",
+					"target": "general"
+				},
+				{
+					"pattern": "useCase",
+					"name": "useCase",
+					"target": "useCase"
+				},
+				{
+					"pattern": "session",
+					"name": "session",
+					"target": "session"
+				}
+			],
+			"targets": {
+				"root": {
+					"viewName": "RootApp",
+					"viewLevel": 2
+				},
+				"contact": {
+					"parent": "root",
+					"controlId": "mainContents",
+					"controlAggregation": "pages",
+					"viewName": "Contact"
+				},
+				"wizard": {
+					"viewName": "Wizard",
+					"controlAggregation": "pages"
+				},
+				"hut": {
+					"viewName": "Hut",
+					"controlAggregation": "pages"
+				},
+				"dashboard": {
+					"parent": "root",
+					"controlId": "mainContents",
+					"controlAggregation": "pages",
+					"viewName": "Dashboard"
+				},
+				"data": {
+					"parent": "root",
+					"controlId": "mainContents",
+					"controlAggregation": "pages",
+					"viewName": "Data"
+				},
+				"wizardSession": {
+					"parent": "root",
+					"controlId": "mainContents",
+					"controlAggregation": "pages",
+					"viewName": "WizardSession"
+				},
+				"general": {
+					"parent": "root",
+					"controlId": "mainContents",
+					"controlAggregation": "pages",
+					"viewName": "General"
+				},
+				"session": {
+					"parent": "root",
+					"controlId": "mainContents",
+					"controlAggregation": "pages",
+					"viewName": "Session"
+				},
+				"useCase": {
+					"parent": "root",
+					"controlId": "mainContents",
+					"controlAggregation": "pages",
+					"viewName": "UseCase"
+				}
+			}
+		},
+		"contentDensities": {
+			"compact": false,
+			"cozy": false
+		}
+	},
+	"sap.platform.hcp": {
+		"uri": "",
+		"_version": "1.1.0"
+	}
+}

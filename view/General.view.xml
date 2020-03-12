@@ -1,0 +1,142 @@
+<mvc:View controllerName="UI5FioriForTools.controller.General" height="100%" xmlns:layout="sap.ui.layout" xmlns:commons="sap.ui.commons" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:uxap="sap.uxap" xmlns="sap.m">
+    <Page showHeader="false">      
+        <uxap:ObjectPageLayout showTitleInHeaderContent="true">
+            <uxap:headerTitle>
+                <uxap:ObjectPageHeader 
+                    id="header" 
+                    headerDesign="Dark" 
+                    objectTitle='{useCaseData>/UsabilityTestDetails/UsabilityTestTitle}'
+                    objectImageURI="./images/teched.jpg"
+                    objectImageShape="Square"
+                    isObjectIconAlwaysVisible="false"
+                    isObjectTitleAlwaysVisible="false"
+                    isObjectSubtitleAlwaysVisible="false">
+                </uxap:ObjectPageHeader>
+            </uxap:headerTitle>
+            <uxap:headerContent>
+                <layout:VerticalLayout>
+                    <ObjectStatus title="Created by" text="Usability Test Moderator" />
+                    <ObjectStatus title="Created on" text="2017-07-28" />
+                    <Link text="Open Prototype" target="_blank" href="{useCaseData>/UsabilityTestDetails/UsabilityTestPrototype}" />
+                </layout:VerticalLayout>
+            </uxap:headerContent>
+            <uxap:sections>
+                <uxap:ObjectPageSection title="Timeline">
+                    <uxap:subSections>
+                        <uxap:ObjectPageSubSection title="Timeline">
+                            <layout:VerticalLayout width="100%">
+                                <Text text="The following figure shows the number of participants during the last 10 days:" />
+                                <core:HTML content='&lt;div id=&quot;timeline&quot; class=&quot;timeline&quot;&gt; &lt;/div&gt;
+                                    &lt;script type=&quot;text/javascript&quot; src=&quot;diagrams/timeline.js&quot; &gt; &lt;/script&gt;' >
+                                </core:HTML>
+                            </layout:VerticalLayout>
+                        </uxap:ObjectPageSubSection>
+                    </uxap:subSections>
+                </uxap:ObjectPageSection>
+                <uxap:ObjectPageSection title="Participants">
+                    <uxap:subSections>
+                        <uxap:ObjectPageSubSection title="Role">
+                            <f:SimpleForm id="roleForm">
+                                <f:content>
+                                    <!--dynamically filled! -->
+                                </f:content>
+                            </f:SimpleForm>
+                            <FlexBox id="waffleHolderRole" alignItems="Start" class="waffle2"
+								justifyContent="Start"></FlexBox>
+                        </uxap:ObjectPageSubSection>
+                        <uxap:ObjectPageSubSection title="Domain-related Years of Experience">
+                            <layout:VerticalLayout width="100%">
+                                <Text text="The following figure shows how many years of domain related experience the participants stated to have:" />
+                            <FlexBox id="horizontalBarChartHolderExperience" alignItems="Start" class="horizontal-bar-chart"
+								justifyContent="Start"></FlexBox>    
+                            </layout:VerticalLayout>
+                        </uxap:ObjectPageSubSection>
+                    </uxap:subSections>
+                </uxap:ObjectPageSection>
+                <uxap:ObjectPageSection title="Technical Statistics">
+                    <uxap:subSections>
+                        <uxap:ObjectPageSubSection title="Screen Resolution">
+                            <f:SimpleForm >
+                                <f:content>
+                                    <Label text="Large Desktop (above 1440px width)" />
+                                    <Text text="{screen>/0/count} participant(s)" /> <Text text="{screen>/0/percentage}%" />
+                                    <Label text="Desktop (1024px - 1440px width)" />
+                                    <Text text="{screen>/1/count} participant(s)" /> <Text text="{screen>/1/percentage}%" />
+                                    <Label text="Tablet (600px - 1023px width)" />
+                                    <Text text="{screen>/2/count} participant(s)" /> <Text text="{screen>/2/percentage}%" />
+                                    <Label text="Phone (below 600px width)" />
+                                    <Text text="{screen>/3/count} participant(s)" /> <Text text="{screen>/3/percentage}%" />
+                                </f:content>
+                            </f:SimpleForm>
+                            <FlexBox id="waffleHolderScreen" alignItems="Start" class="waffle2"
+								justifyContent="Start"></FlexBox>
+                        </uxap:ObjectPageSubSection>
+                        <uxap:ObjectPageSubSection title="Operation System">
+                            <f:SimpleForm>
+                                <f:content>
+                                    <Label text="Windows" />
+                                    <Text text="{os>/0/count} participant(s)" /> <Text text="{os>/0/percentage}%" />
+                                    <Label text="Mac" />
+                                    <Text text="{os>/1/count} participant(s)" /> <Text text="{os>/1/percentage}%" />
+                                    <Label text="iOS" />
+                                    <Text text="{os>/2/count} participant(s)" /> <Text text="{os>/2/percentage}%" />
+                                    <Label text="Android" />
+                                    <Text text="{os>/3/count} participant(s)" /> <Text text="{os>/3/percentage}%" />
+                                </f:content>
+                            </f:SimpleForm>
+                            <FlexBox id="waffleHolderOS" alignItems="Start" class="waffle2"
+								justifyContent="Start"></FlexBox>
+                        </uxap:ObjectPageSubSection>
+                        <uxap:ObjectPageSubSection title="Browser">
+                            <f:SimpleForm >
+                                <f:content>
+                                    <Label text="Chrome" />
+                                    <Text text="{browser>/0/count} participant(s)" /> <Text text="{browser>/0/percentage}%" />
+                                    <Label text="Internet Explorer" />
+                                    <Text text="{browser>/1/count} participant(s)" /> <Text text="{browser>/1/percentage}%" />
+                                    <Label text="Firefox" />
+                                    <Text text="{browser>/2/count} participant(s)" /> <Text text="{browser>/2/percentage}%" />
+                                    <Label text="Safari" />
+                                    <Text text="{browser>/3/count} participant(s)" /> <Text text="{browser>/3/percentage}%" />
+                                    <Label text="Edge" />
+                                    <Text text="{browser>/4/count} participant(s)" /> <Text text="{browser>/4/percentage}%" />
+                                    <Label text="Others (e.g. Opera, Vivaldi, ...)" />
+                                    <Text text="{browser>/5/count} participant(s)" /> <Text text="{browser>/5/percentage}%" />
+                                </f:content>
+                            </f:SimpleForm>
+                            <FlexBox id="waffleHolderBrowser" alignItems="Start" class="waffle2"
+								justifyContent="Start"></FlexBox>
+                        </uxap:ObjectPageSubSection>
+                        <uxap:ObjectPageSubSection title="Java Enabled">
+                            <f:SimpleForm >
+                                <f:content>
+                                    <Label text="{java>/0/java}" />
+                                    <Text text="{java>/0/count} participant(s)" /> <Text text="{java>/0/percentage}%" />
+                                    <Label text="{java>/1/java}" />
+                                    <Text text="{java>/1/count} participant(s)" /> <Text text="{java>/1/percentage}%" />
+                                </f:content>
+                            </f:SimpleForm>
+                            <FlexBox id="waffleHolderJava" alignItems="Start" class="waffle2"
+								justifyContent="Start"></FlexBox>
+                        </uxap:ObjectPageSubSection>
+                        <uxap:ObjectPageSubSection title="Cookies Enabled">
+                            <f:SimpleForm >
+                                <f:content>
+                                    <Label text="{cookie>/0/cookie}" />
+                                    <Text text="{cookie>/0/count} participant(s)" /> <Text text="{cookie>/0/percentage}%" />
+                                    <Label text="{cookie>/1/cookie}" />
+                                    <Text text="{cookie>/1/count} participant(s)" /> <Text text="{cookie>/1/percentage}%" />
+                                </f:content>
+                            </f:SimpleForm>
+                            <FlexBox id="waffleHolderCookie" alignItems="Start" class="waffle2"
+								justifyContent="Start"></FlexBox>
+                        </uxap:ObjectPageSubSection>
+                        <uxap:ObjectPageSubSection title="Touch Enabled">
+                            <Text text="Information about touch enabling might follow in later versions." />
+                        </uxap:ObjectPageSubSection>
+                    </uxap:subSections>
+                </uxap:ObjectPageSection>
+            </uxap:sections>
+        </uxap:ObjectPageLayout>
+	</Page>
+</mvc:View>

@@ -1,0 +1,30 @@
+[
+  {
+    "label": "Use Case 1",
+    "TotalProcessingTime": 21,
+    "TimeForAction1": 7,
+    "TimeForAction2": 14,
+    "TimeForAction3": 0,
+    "TimeForAction4": 0,
+    "TimeForAction5": 0,
+    "TimeForAction6": 0,
+    "TimeForAction7": 0,
+    "TimeForAction8": 0,
+    "TimeForAction9": 0,
+    "TimeForAction10": 0
+  },
+  {
+    "label": "Use Case 2",
+    "TotalProcessingTime": 9,
+    "TimeForAction1": 5,
+    "TimeForAction2": 2,
+    "TimeForAction3": 2,
+    "TimeForAction4": 1,
+    "TimeForAction5": 4,
+    "TimeForAction6": 2,
+    "TimeForAction7": 1,
+    "TimeForAction8": 4,
+    "TimeForAction9": 2,
+    "TimeForAction10": 3
+  }
+]

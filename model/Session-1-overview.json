@@ -1,0 +1,30 @@
+[
+  {
+    "useCase": "Use Case 1",
+    "duration": 231
+  },
+  {
+    "useCase": "Use Case 2",
+    "duration": 123
+  },
+  {
+    "useCase": "Use Case 3",
+    "duration": 241
+  },
+  {
+    "useCase": "Use Case 4",
+    "duration": 533
+  },
+  {
+    "useCase": "Use Case 5",
+    "duration": 183
+  },
+  {
+    "useCase": "Use Case 6",
+    "duration": 95
+  },
+  {
+    "useCase": "Use Case 7",
+    "duration": 252
+  }
+]
